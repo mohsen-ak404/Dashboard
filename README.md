@@ -1,4 +1,4 @@
-# Task-2-front-end
+# Task-Dashboard-front-end
 
 A front-end web development project built with HTML and CSS.
 
