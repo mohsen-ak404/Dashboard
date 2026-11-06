@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سفارش‌های من</title>
+
+    <!-- Stylesheets (order matters: reset, font, variables, then main styles) -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/variable.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Reusable SVG icons (used with <use href="#id">) -->
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-clock" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.75">
+        <circle cx="13" cy="13" r="11" />
+        <path d="M13 7.5V12.8545C13 13.0495 13.0975 13.2317 13.2598 13.3398L16.5 15.5" stroke-linecap="round" />
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 15 12" fill="currentColor">
+        <path d="M6.06694 0.183058C6.31102 0.427136 6.31102 0.822864 6.06694 1.06694L2.13388 5H13.9583C14.3035 5 14.5833 5.27982 14.5833 5.625C14.5833 5.97018 14.3035 6.25 13.9583 6.25H2.13388L6.06694 10.1831C6.31102 10.4271 6.31102 10.8229 6.06694 11.0669C5.82286 11.311 5.42714 11.311 5.18306 11.0669L0.183058 6.06694C-0.0610194 5.82286 -0.0610194 5.42714 0.183058 5.18306L5.18306 0.183058C5.42714 -0.0610194 5.82286 -0.0610194 6.06694 0.183058Z" fill-rule="evenodd" clip-rule="evenodd" />
+      </symbol>
+    </svg>
+    <!-- Page wrapper: 1 column on mobile, 2 columns (sidebar + content) on desktop -->
+    <div class="dashboard">
+      <!-- Sidebar: user menu -->
+      <aside class="sidebar">
+        <!-- User profile: avatar, name, phone and edit button -->
+        <div class="sidebar__profile">
+          <div class="sidebar__user-info">
+            <div class="sidebar__avatar">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="4.5"
+                  stroke="#171717"
+                  stroke-width="1.75"
+                />
+                <path
+                  d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20"
+                  stroke="#171717"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2 class="sidebar__name">رضا جنیدی</h2>
+              <p class="sidebar__phone">۰۹۱۲۳۴۵۶۷۸۹</p>
+            </div>
+          </div>
+
+          <button type="button" class="sidebar__edit-btn" aria-label="ویرایش">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 22H20"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke="#130505"
+              />
+              <path
+                d="M13.8881 3.66293L14.6296 2.92142C15.8581 1.69286 17.85 1.69286 19.0786 2.92142C20.3071 4.14999 20.3071 6.14188 19.0786 7.37044L18.3371 8.11195M13.8881 3.66293C13.8881 3.66293 13.9807 5.23862 15.3711 6.62894C16.7614 8.01926 18.3371 8.11195 18.3371 8.11195M13.8881 3.66293L7.07106 10.4799C6.60933 10.9416 6.37846 11.1725 6.17992 11.4271C5.94571 11.7273 5.74491 12.0522 5.58107 12.396C5.44219 12.6874 5.33894 12.9972 5.13245 13.6167L4.25745 16.2417M4.25745 16.2417L4.04356 16.8833C3.94194 17.1882 4.02128 17.5243 4.2485 17.7515C4.47573 17.9787 4.81182 18.0581 5.11667 17.9564L5.75834 17.7426L8.38334 16.8675C9.00282 16.6611 9.31256 16.5578 9.60398 16.4189C9.94775 16.2551 10.2727 16.0543 10.5729 15.8201C10.8275 15.6215 11.0584 15.3907 11.5201 14.9289L18.3371 8.11195M5.75834 17.7426L4.25745 16.2417"
+                stroke-width="1.5"
+                stroke="#130505"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Sidebar navigation links -->
+        <nav class="sidebar__nav">
+          <a href="#" class="sidebar__link sidebar__link--active" aria-current="page">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="22"
+              height="21"
+              viewBox="0 0 22 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.9246 12.697C15.1057 12.3245 14.9505 11.8757 14.578 11.6946C14.2055 11.5135 13.7567 11.6687 13.5756 12.0412C13.5151 12.1655 13.2116 12.5763 12.6763 12.9591C12.1593 13.3287 11.4986 13.6191 10.7501 13.6191C9.17788 13.6191 8.33932 12.6707 7.87945 11.9612C7.65416 11.6136 7.18975 11.5145 6.84217 11.7398C6.49458 11.9651 6.39543 12.4295 6.62072 12.7771C7.19789 13.6675 8.43341 15.1191 10.7501 15.1191C11.894 15.1191 12.8537 14.6762 13.5487 14.1792C14.2255 13.6953 14.7258 13.1061 14.9246 12.697Z"
+                fill="white"
+              />
+              <path
+                d="M12.2569 0.44955L13.1316 1.02252L21.1588 6.24019C21.5061 6.46593 21.6047 6.93047 21.3789 7.27776C21.1532 7.62506 20.6886 7.7236 20.3413 7.49786L19.4626 6.92664C19.4874 7.11223 19.5001 7.30058 19.5001 7.49063V15.8692C19.5001 18.2164 17.5973 20.1192 15.2501 20.1192H6.25009C3.90288 20.1192 2.00009 18.2164 2.00009 15.8692V7.49063C2.00009 7.30058 2.01279 7.11223 2.03762 6.92664L1.15883 7.49786C0.811534 7.7236 0.346997 7.62506 0.121255 7.27776C-0.104486 6.93047 -0.00594819 6.46593 0.341347 6.24019L8.36851 1.02254L9.24329 0.44955C10.1584 -0.14985 11.3418 -0.14985 12.2569 0.44955ZM11.4313 1.70634L12.3119 2.27872L16.7569 5.19018C17.5327 5.69832 18.0001 6.56324 18.0001 7.49063V15.8692C18.0001 17.388 16.7689 18.6192 15.2501 18.6192H6.25009C4.7313 18.6192 3.50009 17.388 3.50009 15.8692V7.49063C3.50009 6.56324 3.96751 5.69832 4.74329 5.19018L9.18824 2.27874L10.0689 1.70634C10.4831 1.43708 11.0171 1.43708 11.4313 1.70634Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="white"
+              />
+            </svg>
+            <span>سفارش های من</span>
+          </a>
+
+          <a href="#" class="sidebar__link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="19"
+              height="21"
+              viewBox="0 0 19 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.78923 0C5.16588 0 3.03923 2.12665 3.03923 4.75C3.03923 7.37335 5.16588 9.5 7.78923 9.5C10.4126 9.5 12.5392 7.37335 12.5392 4.75C12.5392 2.12665 10.4126 0 7.78923 0ZM4.53923 4.75C4.53923 2.95507 5.99431 1.5 7.78923 1.5C9.58416 1.5 11.0392 2.95507 11.0392 4.75C11.0392 6.54493 9.58416 8 7.78923 8C5.99431 8 4.53923 6.54493 4.53923 4.75Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#2F0D0C"
+              />
+              <path
+                d="M2.5676 13.6091C2.97188 12.9219 3.70961 12.5 4.50687 12.5H10.2912C10.7054 12.5 11.0412 12.1642 11.0412 11.75C11.0412 11.3358 10.7054 11 10.2912 11H4.50687C3.1781 11 1.94855 11.7032 1.27476 12.8484L0.612985 13.9733C0.0906677 14.861 -0.133386 15.8978 0.0805198 16.8298C0.303773 17.8025 0.995417 18.5951 2.12733 18.8875C3.99378 19.3697 6.47351 19.5618 8.81645 19.4828C9.23043 19.4688 9.55471 19.1219 9.54076 18.708C9.5268 18.294 9.17989 17.9697 8.76592 17.9836C6.51414 18.0596 4.18715 17.8704 2.50251 17.4352C1.92695 17.2865 1.64371 16.9352 1.54251 16.4943C1.43196 16.0126 1.53389 15.3661 1.90583 14.7339L2.5676 13.6091Z"
+                fill="#2F0D0C"
+              />
+              <path
+                d="M16.9179 18.068C17.3106 17.4752 17.5392 16.7643 17.5392 16C17.5392 13.9289 15.8603 12.25 13.7892 12.25C11.7182 12.25 10.0392 13.9289 10.0392 16C10.0392 18.0711 11.7182 19.75 13.7892 19.75C14.5535 19.75 15.2644 19.5213 15.8573 19.1287L16.7593 20.0307C17.0521 20.3236 17.527 20.3236 17.8199 20.0307C18.1128 19.7378 18.1128 19.2629 17.8199 18.97L16.9179 18.068ZM11.5392 16C11.5392 14.7574 12.5466 13.75 13.7892 13.75C15.0319 13.75 16.0392 14.7574 16.0392 16C16.0392 17.2426 15.0319 18.25 13.7892 18.25C12.5466 18.25 11.5392 17.2426 11.5392 16Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#2F0D0C"
+              />
+            </svg>
+            <span>اطلاعات حساب کاربری</span>
+          </a>
+
+          <a href="#" class="sidebar__link sidebar__link--badge">
+            <div class="sidebar__link-content">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.99631 0C6.3161 0 3.24631 2.81847 3.24631 6.39153V7.44723C3.24631 8.47466 2.94219 9.4791 2.37227 10.334C2.36223 10.349 2.35273 10.3645 2.3438 10.3802L1.96516 11.0484C1.47504 11.9133 1.31535 12.9251 1.51104 13.8979C1.52568 13.9707 1.54944 14.0722 1.58761 14.1948C2.05095 15.6832 3.49726 16.4486 4.6862 16.8067C5.04153 16.9137 5.41876 17.0081 5.81275 17.0898L5.86402 17.1717C6.95839 18.9184 8.43099 19.95 10.0469 19.95C11.6628 19.95 13.1354 18.9184 14.2297 17.1717L14.2965 17.0652C14.6504 16.9888 14.9902 16.9021 15.312 16.805C16.5165 16.4416 17.9056 15.6622 18.3884 14.2056C18.4065 14.1508 18.4216 14.1022 18.4331 14.065C18.4461 14.0231 18.4517 14.0051 18.4556 13.9936C18.4663 13.9626 18.4749 13.9309 18.4814 13.8988C18.6785 12.925 18.5173 11.9128 18.0275 11.0484L17.6488 10.3802C17.6399 10.3645 17.6304 10.349 17.6203 10.334C17.0504 9.4791 16.7463 8.47466 16.7463 7.44723V6.39153C16.7463 2.81847 13.6765 0 9.99631 0ZM12.1849 17.3852C10.7934 17.5181 9.31472 17.5215 7.91872 17.3955C8.63412 18.1392 9.37848 18.45 10.0469 18.45C10.7184 18.45 11.4665 18.1363 12.1849 17.3852ZM4.74631 6.39153C4.74631 3.73312 7.05559 1.5 9.99631 1.5C12.937 1.5 15.2463 3.73312 15.2463 6.39153V7.44723C15.2463 8.76147 15.6326 10.0465 16.3568 11.1427L16.7224 11.7879C17.0273 12.326 17.1321 12.954 17.019 13.5611L17.0028 13.613L17.0002 13.6214C16.9889 13.6579 16.9776 13.6942 16.9645 13.7336C16.712 14.4955 15.9118 15.0573 14.8787 15.3689C12.1467 16.1932 7.85285 16.1937 5.11871 15.3704C4.06292 15.0524 3.2533 14.499 3.01981 13.7489C2.99901 13.6821 2.98746 13.6313 2.98158 13.6021C2.8567 12.9813 2.95889 12.3373 3.27019 11.7879L3.63583 11.1427C4.36004 10.0465 4.74631 8.76146 4.74631 7.44723V6.39153Z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="#190D03"
+                />
+                <path
+                  d="M18.3837 6.0012C18.7973 6.02461 19.1135 6.37884 19.0901 6.79239C19.0561 7.39315 19.0742 7.80993 19.1704 8.16793C19.2622 8.50966 19.4385 8.84563 19.8003 9.24991C20.0765 9.5586 20.0501 10.0327 19.7414 10.3089C19.4327 10.5851 18.9586 10.5588 18.6824 10.2501C18.1941 9.70437 17.8851 9.16535 17.7217 8.55707C17.5627 7.96508 17.5558 7.35685 17.5925 6.70761C17.6159 6.29406 17.9702 5.97779 18.3837 6.0012Z"
+                  fill="#190D03"
+                />
+                <path
+                  d="M2.39881 6.70761C2.3754 6.29406 2.02117 5.97779 1.60762 6.0012C1.19407 6.02461 0.877799 6.37884 0.901209 6.79239C0.935217 7.39315 0.91714 7.80993 0.820971 8.16793C0.729177 8.50966 0.552794 8.84563 0.191076 9.24991C-0.0851193 9.5586 -0.058778 10.0327 0.249911 10.3089C0.5586 10.5851 1.03274 10.5588 1.30894 10.2501C1.79722 9.70437 2.10622 9.16535 2.26962 8.55707C2.42864 7.96508 2.43556 7.35685 2.39881 6.70761Z"
+                  fill="#190D03"
+                />
+              </svg>
+              <span>پیام ها</span>
+            </div>
+            <span class="sidebar__badge">۳</span>
+          </a>
+
+          <a href="#" class="sidebar__link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="22"
+              height="20"
+              viewBox="0 0 22 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 10C5 9.58579 5.33579 9.25 5.75 9.25H11.75C12.1642 9.25 12.5 9.58579 12.5 10C12.5 10.4142 12.1642 10.75 11.75 10.75H5.75C5.33579 10.75 5 10.4142 5 10Z"
+                fill="#2F0D0C"
+              />
+              <path
+                d="M5.75 5.25C5.33579 5.25 5 5.58579 5 6C5 6.41421 5.33579 6.75 5.75 6.75H8.25C8.66421 6.75 9 6.41421 9 6C9 5.58579 8.66421 5.25 8.25 5.25H5.75Z"
+                fill="#2F0D0C"
+              />
+              <path
+                d="M0 4.25C0 1.90279 1.90279 0 4.25 0H17.25C19.5972 0 21.5 1.90279 21.5 4.25V12.25C21.5 14.5972 19.5972 16.5 17.25 16.5H11.4749C11.2097 16.5 10.9553 16.6054 10.7678 16.7929L8.26219 19.2985C6.99147 20.5692 4.81733 19.9109 4.4649 18.1487L4.24263 17.0374C4.18013 16.7249 3.90576 16.5 3.58708 16.5C1.60599 16.5 0 14.894 0 12.9129V4.25ZM4.25 1.5C2.73122 1.5 1.5 2.73122 1.5 4.25V12.9129C1.5 14.0656 2.43442 15 3.58708 15C4.62078 15 5.51078 15.7296 5.7135 16.7433L5.93577 17.8546C6.05324 18.442 6.77796 18.6614 7.20153 18.2378L9.70711 15.7322C10.1759 15.2634 10.8118 15 11.4749 15H17.25C18.7688 15 20 13.7688 20 12.25V4.25C20 2.73122 18.7688 1.5 17.25 1.5H4.25Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="#2F0D0C"
+              />
+            </svg>
+            <span>نظرات من</span>
+          </a>
+
+          <a href="#" class="sidebar__link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="19"
+              height="20"
+              viewBox="0 0 19 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5 4.25073C1.5 2.58427 2.97038 1.30079 4.62156 1.52595L8.62156 2.07141C9.98415 2.25721 11 3.42099 11 4.79619V6.35011C11 6.76432 11.3358 7.10011 11.75 7.10011C12.1642 7.10011 12.5 6.76432 12.5 6.35011V4.79619C12.5 2.67089 10.93 0.872317 8.82423 0.58516L4.82423 0.0397057C2.27241 -0.30827 0 1.67529 0 4.25073V15.4545C0 18.331 2.7976 20.3766 5.53862 19.5045L9.53862 18.2317C11.3023 17.6706 12.5 16.0326 12.5 14.1818V13.3501C12.5 12.9359 12.1642 12.6001 11.75 12.6001C11.3358 12.6001 11 12.9359 11 13.3501V14.1818C11 15.3794 10.225 16.4392 9.08381 16.8024L5.08381 18.0751C3.31021 18.6394 1.5 17.3157 1.5 15.4545V4.25073Z"
+                fill="#190D03"
+              />
+              <path
+                d="M14.1752 6.36835C14.4413 6.05089 14.9143 6.00924 15.2318 6.27531L17.8678 8.48465C18.7108 9.19113 18.7108 10.5084 17.8678 11.2149L15.2319 13.4249C14.9144 13.691 14.4414 13.6494 14.1753 13.332C13.9092 13.0145 13.9508 12.5415 14.2682 12.2754L16.2664 10.6001H6.25C5.83579 10.6001 5.5 10.2643 5.5 9.8501C5.5 9.43588 5.83579 9.1001 6.25 9.1001H16.267L14.2683 7.42492C13.9508 7.15885 13.9091 6.68581 14.1752 6.36835Z"
+                fill="#190D03"
+              />
+            </svg>
+            <span>خروج</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="orders">
+        <!-- Page header: back link (mobile only) and page title (visually hidden on desktop) -->
+        <header class="orders__header">
+          <a href="#" class="orders__back" aria-label="بازگشت">&rarr;</a>
+          <h1 class="orders__title">سفارش های من</h1>
+        </header>
+
+        <!-- Order status summary cards -->
+        <section class="status-list" aria-label="وضعیت سفارش‌ها">
+          <!-- Status card: processing -->
+          <a href="#" class="status-card status-card--active" aria-current="true">
+            <div class="status-card__icon">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="56"
+                  height="56"
+                  rx="8"
+                  fill="#2E7AF1"
+                  fill-opacity="0.1"
+                />
+                <circle
+                  cx="28"
+                  cy="28"
+                  r="11.6667"
+                  stroke="#2E7AF1"
+                  stroke-width="1.75"
+                />
+                <path
+                  d="M28 22.5V27.8545C28 28.0495 28.0975 28.2317 28.2598 28.3398L31.5 30.5"
+                  stroke="#2E7AF1"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="status-card__info">
+              <span class="status-card__title">در حال پردازش</span>
+              <strong class="status-card__count">
+                <span class="status-card__number">۵</span> سفارش
+              </strong>
+            </div>
+          </a>
+
+          <!-- Status card: delivered -->
+          <a href="#" class="status-card">
+            <div class="status-card__icon">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="56"
+                  height="56"
+                  rx="8"
+                  fill="#0CAF3A"
+                  fill-opacity="0.1"
+                />
+                <circle
+                  cx="28"
+                  cy="28"
+                  r="11.6667"
+                  stroke="#0CAF3A"
+                  stroke-width="2.1"
+                />
+                <path
+                  d="M23.9167 28.5833L26.25 30.9167L32.0833 25.0833"
+                  stroke="#0CAF3A"
+                  stroke-width="2.1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="status-card__info">
+              <span class="status-card__title">تحویل شده</span>
+              <strong class="status-card__count">
+                <span class="status-card__number">۴</span> سفارش
+              </strong>
+            </div>
+          </a>
+
+          <!-- Status card: returned -->
+          <a href="#" class="status-card">
+            <div class="status-card__icon">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="56"
+                  height="56"
+                  rx="8"
+                  fill="#171717"
+                  fill-opacity="0.1"
+                />
+                <path
+                  d="M15.4583 28C15.4583 21.0734 21.0733 15.4583 27.9999 15.4583C34.9265 15.4583 40.5416 21.0734 40.5416 28C40.5416 34.9266 34.9265 40.5416 27.9999 40.5416C21.0733 40.5416 15.4583 34.9266 15.4583 28ZM27.9999 17.2083C22.0398 17.2083 17.2083 22.0399 17.2083 28C17.2083 33.9601 22.0398 38.7916 27.9999 38.7916C33.96 38.7916 38.7916 33.9601 38.7916 28C38.7916 22.0399 33.96 17.2083 27.9999 17.2083ZM24.7057 25.375L25.6454 24.5872C26.0157 24.2767 26.0642 23.7248 25.7538 23.3545C25.4433 22.9842 24.8914 22.9357 24.5211 23.2461L22.4709 24.9649C22.0776 25.2947 21.879 25.7646 21.875 26.236C21.875 26.2407 21.8749 26.2453 21.8749 26.25C21.8749 26.2544 21.875 26.2588 21.875 26.2633C21.8786 26.7351 22.0772 27.2056 22.4709 27.5356L24.5212 29.2539C24.8916 29.5644 25.4434 29.5158 25.7539 29.1454C26.0643 28.775 26.0157 28.2231 25.6453 27.9127L24.7054 27.125H30.0416C31.1692 27.125 32.0833 28.0391 32.0833 29.1666C32.0833 30.2942 31.1692 31.2083 30.0416 31.2083H27.7083C27.225 31.2083 26.8333 31.6001 26.8333 32.0833C26.8333 32.5666 27.225 32.9583 27.7083 32.9583H30.0416C32.1357 32.9583 33.8333 31.2607 33.8333 29.1666C33.8333 27.0726 32.1357 25.375 30.0416 25.375H24.7057Z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="#14151B"
+                />
+              </svg>
+            </div>
+            <div class="status-card__info">
+              <span class="status-card__title">مرجوعی</span>
+              <strong class="status-card__count">
+                <span class="status-card__number">۲</span> سفارش
+              </strong>
+            </div>
+          </a>
+
+          <!-- Status card: canceled -->
+          <a href="#" class="status-card">
+            <div class="status-card__icon">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="56"
+                  height="56"
+                  rx="8"
+                  fill="#ED4545"
+                  fill-opacity="0.1"
+                />
+                <circle
+                  cx="28"
+                  cy="28"
+                  r="11.6667"
+                  stroke="#ED4545"
+                  stroke-width="1.75"
+                />
+                <path
+                  d="M32.7083 23.2917L23.2917 32.7083M23.2917 23.2917L32.7083 32.7083"
+                  stroke="#ED4545"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="status-card__info">
+              <span class="status-card__title">لغو شده</span>
+              <strong class="status-card__count">
+                <span class="status-card__number">۳</span> سفارش
+              </strong>
+            </div>
+          </a>
+        </section>
+
+        <!-- Order cards list -->
+        <section class="order-cards">
+          <!-- Order card 1: status, order info, price, products -->
+          <article class="order-card">
+            <div class="order-card__header">
+              <div class="order-card__status-badge">
+                <svg width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="#icon-clock" />
+                </svg>
+                <span>در حال پردازش</span>
+              </div>
+            </div>
+
+            <div class="order-card__body">
+              <div class="order-card__meta">
+                <div class="order-card__meta-item">
+                  کد سفارش :
+                  <strong class="order-card__value">۲۱۶۵۴۴۹</strong>
+                </div>
+                <div class="order-card__meta-item">
+                  تاریخ تحویل سفارش :
+                  <strong class="order-card__value">۱۴۰۳/۰۵/۰۷</strong>
+                </div>
+              </div>
+
+              <div class="order-card__price-box">
+                <strong class="order-card__price">۱,۵۵۰,۰۰۰</strong>
+                <span class="order-card__currency">تومان</span>
+              </div>
+            </div>
+
+            <div class="order-card__footer">
+              <div class="order-card__products">
+                <div class="order-card__product-item">
+                  <img src="./assets/images/1.png" alt="عطر ۱" loading="lazy" />
+                  <span class="order-card__product-qty">۱</span>
+                </div>
+                <div class="order-card__product-item">
+                  <img src="./assets/images/2.png" alt="عطر ۲" loading="lazy" />
+                  <span class="order-card__product-qty">۱</span>
+                </div>
+                <div class="order-card__product-item">
+                  <img src="./assets/images/3.png" alt="عطر ۳" loading="lazy" />
+                  <span class="order-card__product-qty">۳</span>
+                </div>
+              </div>
+
+              <a href="#" class="order-card__details-link">
+                <span>جزئیات سفارش</span>
+                <svg width="15" height="12" aria-hidden="true" focusable="false">
+                  <use href="#icon-arrow" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Order card 2: status, order info, price, products -->
+          <article class="order-card">
+            <div class="order-card__header">
+              <div class="order-card__status-badge">
+                <svg width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="#icon-clock" />
+                </svg>
+                <span>در حال پردازش</span>
+              </div>
+            </div>
+
+            <div class="order-card__body">
+              <div class="order-card__meta">
+                <div class="order-card__meta-item">
+                  کد سفارش :
+                  <strong class="order-card__value">۲۱۶۵۴۴۹</strong>
+                </div>
+                <div class="order-card__meta-item">
+                  تاریخ تحویل سفارش :
+                  <strong class="order-card__value">۱۴۰۳/۰۵/۰۷</strong>
+                </div>
+              </div>
+
+              <div class="order-card__price-box">
+                <strong class="order-card__price">۱,۵۵۰,۰۰۰</strong>
+                <span class="order-card__currency">تومان</span>
+              </div>
+            </div>
+
+            <div class="order-card__footer">
+              <div class="order-card__products">
+                <div class="order-card__product-item">
+                  <img src="./assets/images/1.png" alt="عطر ۱" loading="lazy" />
+                  <span class="order-card__product-qty">۱</span>
+                </div>
+                <div class="order-card__product-item">
+                  <img src="./assets/images/2.png" alt="عطر ۲" loading="lazy" />
+                  <span class="order-card__product-qty">۱</span>
+                </div>
+                <div class="order-card__product-item">
+                  <img src="./assets/images/3.png" alt="عطر ۳" loading="lazy" />
+                  <span class="order-card__product-qty">۳</span>
+                </div>
+              </div>
+
+              <a href="#" class="order-card__details-link">
+                <span>جزئیات سفارش</span>
+                <svg width="15" height="12" aria-hidden="true" focusable="false">
+                  <use href="#icon-arrow" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

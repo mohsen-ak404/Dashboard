@@ -1,0 +1,23 @@
+/* Design tokens: every color used in style.css lives here */
+:root {
+  /* surfaces */
+  --color-bg: #ffffff;
+  --color-surface: #f7f7f7;
+  --color-border: #ebebeb;
+
+  /* text */
+  --color-text-main: #171717;
+  --color-text-muted: #6b7280;
+  --color-text-light: #808080;
+  --color-nav-text: #190d03;
+
+  /* brand */
+  --color-primary: #cc312d;
+  --color-brand: #2f0d0c;
+  --color-brand-hover: rgba(47, 13, 12, 0.05);
+  --color-brand-tint: #f3e8e6;
+
+  /* status */
+  --color-info: #2e7af1;
+  --color-info-tint: rgba(46, 122, 241, 0.1);
+}
